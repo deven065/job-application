@@ -1,6 +1,7 @@
 package com.deven.firstjobapplication.company;
 
 import com.deven.firstjobapplication.job.Job;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
@@ -15,7 +16,8 @@ public class Company {
     private String name;
     private String description;
 
-    @OneToMany
+    @JsonIgnore //  This annotation will remove recursive callbacks
+    @OneToMany(mappedBy = "company")
     private List<Job> jobs;
 
     //  private List<Review> reviews;

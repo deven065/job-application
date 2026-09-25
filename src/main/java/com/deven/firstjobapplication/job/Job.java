@@ -1,5 +1,6 @@
 package com.deven.firstjobapplication.job;
 
+import com.deven.firstjobapplication.company.Company;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,9 @@ public class Job {
     private String maxSalary;
     private String location;
 
+    @ManyToOne
+    private Company company;
+
     //  Default Constructor
     public Job() {
     }
@@ -25,6 +29,14 @@ public class Job {
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Long getId() {
