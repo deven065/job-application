@@ -1,11 +1,13 @@
 package com.deven.firstjobapplication.company;
 
 import com.deven.firstjobapplication.job.Job;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
+@JsonPropertyOrder({"id", "name", "description", "jobs"})
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
