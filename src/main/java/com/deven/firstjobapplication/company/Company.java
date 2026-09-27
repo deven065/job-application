@@ -1,6 +1,7 @@
 package com.deven.firstjobapplication.company;
 
 import com.deven.firstjobapplication.job.Job;
+import com.deven.firstjobapplication.review.Review;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
@@ -20,7 +21,16 @@ public class Company {
     @OneToMany(mappedBy = "company")
     private List<Job> jobs;
 
-    //  private List<Review> reviews;
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 
     public Company() {
     }
