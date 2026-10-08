@@ -1,0 +1,31 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+build/
+
+# Java
+*.class
+
+# Environment / secrets
+.env
+*.env
+
+# Spring local configuration
+application-local.properties
+application-local.yml
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
